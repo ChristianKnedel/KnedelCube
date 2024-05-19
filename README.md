@@ -1,68 +1,27 @@
-```
-$ apt-get install imagemagick gifsicle ffmpeg
-```
 # KnedelCube
-
+KnedelCube is an LED cube that displays random animation from the Divoom community.
 
 [![](http://img.youtube.com/vi/IrJWMx3r_K0/0.jpg)](http://www.youtube.com/watch?v=IrJWMx3r_K0 "knedelcube")
 
-## install KnedelCube
-
-
+## install
 
 ### install rpi-rgb-led-matrix
-```
-cd ~
-mkdir install
-cd install
-get https://github.com/hzeller/rpi-rgb-led-matrix/archive/refs/heads/master.zip
-unzip master.zip
-cd  rpi-rgb-led-matrix-master
-make -C examples-api-use
-```
+Working with RGB LED matrices requires to install a base driver software. I use  the incredibly versatile rpi-rgb-led-matrix. 
+ https://github.com/hzeller/rpi-rgb-led-matrix/
 
-### install Python-lib
+### install KnedelCube
+Please edit gif-viewer.py and change your settings
 ```
-cd ~/install/bindings/python/
-sudo apt-get update && sudo apt-get install python3-dev python3-pillow -y
-make build-python PYTHON=$(command -v python3)
-sudo make install-python PYTHON=$(command -v python3)
-```
-
-```
+$ apt-get install ffmpeg
 wget knedel
 unzip master.zip
-
+cd knedel-cube
+cp /home/cube/install/rpi-rgb-led-matrix-master/bindings/python/samples/gif-viewer.py .
 ```
 
-
-
-## divoom-downloader
-The “divoom-downloader” can be used to download animated images from https://pixel.divoom-gz.com/.
-
-### Install "divoom-downloader"
-dd
+### Cronjob
+This cronjob can be used to change the animation by interval
 ```
-$ apt-get install imagemagick gifsicle ffmpeg
+*/5 * * * * /home/cube/knedelcube/merge-one-gif
+@reboot /home/cube/knedelcube/merge-one-gif
 ```
-
-### Categories
-| category | Classify (ID) |
-| ------ | ------ |
-| NEW | 0 |
-| Recommend | 18 |
-| Annual | 14 |
-| Character | 3 |
-| Festival | 17 |
-| Emoji | 4 |
-| Pattern | 8 |
-| Creative | 9 |
-| Nature | 6 |
-| Daily | 5 |
-| Gadget | 15 |
-| Icon | 7 |
-| Business | 16 |
-| Default | 1 |
-| Photo | 12 |
-
-
