@@ -25,3 +25,4 @@ This cronjob can be used to change the animation by interval
 */5 * * * * /home/cube/knedelcube/merge-one-gif
 @reboot /home/cube/knedelcube/merge-one-gif
 ```
+
