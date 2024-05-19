@@ -1,7 +1,17 @@
 #!/bin/bash
 CLASSIFY=0
+START_PAGE=0
+END_PAGE=500
+while getopts c:s:e: flag
+do
+    case "${flag}" in
+        c) CLASSIFY=${OPTARG};;
+        s) START_PAGE=${OPTARG};;
+        e) END_PAGE=${OPTARG};;
+    esac
+done
 
-for i in {0..500}
+for i in {${START_PAGE}..${END_PAGE}}
 do
     PAGE=$(expr $i \* 18)
 
@@ -27,7 +37,7 @@ do
           echo "$SLUG does not exist."
           echo "Download https://f.divoom-gz.com/${FILE}"
           curl "https://f.divoom-gz.com/${FILE}" > "downloads/${SLUG}.data"
-          python decode.py "downloads/${SLUG}.data"
+          python3 decode.py "downloads/${SLUG}.data"
           rm "downloads/${SLUG}.data"
           sleep 2
       fi
