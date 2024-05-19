@@ -1,0 +1,5 @@
+requests>=2.31.0
+python-lzo>=1.15
+pycryptodome>=3.18.0
+Pillow
+apixoo
