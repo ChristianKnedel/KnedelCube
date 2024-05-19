@@ -13,16 +13,16 @@ Working with RGB LED matrices requires to install a base driver software. I use 
 Please edit gif-viewer.py and change your settings
 ```
 $ apt-get install ffmpeg
-wget knedel
-unzip master.zip
-cd knedel-cube
+wget https://github.com/ChristianKnedel/KnedelCube/archive/refs/heads/main.zip
+unzip main.zip
+cd KnedelCube
 cp /home/cube/install/rpi-rgb-led-matrix-master/bindings/python/samples/gif-viewer.py .
 ```
 
 ### Cronjob
 This cronjob can be used to change the animation by interval
 ```
-*/5 * * * * /home/cube/knedelcube/merge-one-gif
-@reboot /home/cube/knedelcube/merge-one-gif
+*/5 * * * * /home/cube/KnedelCube/merge-one-gif
+@reboot /home/cube/KnedelCube/merge-one-gif
 ```
 
