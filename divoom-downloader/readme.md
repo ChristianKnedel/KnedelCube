@@ -16,7 +16,7 @@ docker run -it -v $(pwd)/test:/code/downloads  divoom-downloader -c 17 -s 0 -e 5
 
 #### Downloader command options
 
-The emerge command has some USE flag related options like: 
+The Divoom-Downloader command has some USE flag related options like: 
 * -c category, eg. 17 for Festival 
 * -s Start Page 
 * -e End Page 
